@@ -19,12 +19,13 @@ function preload(){
 function setup(){
     engine = Engine.create();
     world = engine.world;
+    Engine.run(engine);
     
 
     createCanvas(900,400);
 
     ground = new Ground();
-    stand1 = new Stand(380,275,270,10);
+    stand1 = new Stand(380,300,270,10);
     stand2 = new Stand(700,200,200,10);
 
     //set1
@@ -45,7 +46,7 @@ function setup(){
     block12 = new Block(400,235,30,40);
     block13 = new Block(430,235,30,40);
     block14 = new Block(460,235,30,40);
-    block0  = new Block(280,235,30,40);
+    
     //third floor
     block15 = new Block(340,195,30,40);
     block16 = new Block(370,195,30,40);
@@ -59,17 +60,17 @@ function setup(){
 
     //set2
     //first floor
-    block1 = new Block(640,155,30,40);
-    block2 = new Block(670,155,30,40);
-    block3 = new Block(700,155,30,40);
-    block4 = new Block(730,155,30,40);
-    block5 = new Block(760,155,30,40);
+    blocks1 = new Block(640,155,30,40);
+    blocks2 = new Block(670,155,30,40);
+    blocks3 = new Block(700,155,30,40);
+    blocks4 = new Block(730,155,30,40);
+    blocks5 = new Block(760,155,30,40);
     //second floor
-    block6 = new Block(670,135,30,40);
-    block7 = new Block(700,135,30,40);
-    block8 = new Block(730,135,30,40);
+    blocks6 = new Block(670,135,30,40);
+    blocks7 = new Block(700,135,30,40);
+    blocks8 = new Block(730,135,30,40);
     //third floor
-    block9 = new Block(700,95,30,40);
+    blocks9 = new Block(700,95,30,40);
 
 
     ball = Bodies.circle(50,200,20);
@@ -91,6 +92,7 @@ function draw(){
 
      stand1.display();
      stand2.display();
+     ground.display();
      
      stroke(15);
      fill("brown");
@@ -111,7 +113,7 @@ function draw(){
      block12.display();
      block13.display();
      block14.display();
-     block0.display();
+    
      stroke(15);
      fill("blue");
      block15.display();
@@ -128,25 +130,25 @@ function draw(){
 
      stroke(15);
      fill("red");
-     block1.display();
-     block2.display();
-     block3.display();
-     block4.display();
-     block5.display();
+     blocks1.display();
+     blocks2.display();
+     blocks3.display();
+     blocks4.display();
+     blocks5.display();
      stroke(15);
      fill("yellow");
-     block6.display();
-     block7.display();
-     block8.display();
+     blocks6.display();
+     blocks7.display();
+     blocks8.display();
      stroke(15);
      fill("cyan");
-     block9.display();
+     blocks9.display();
      fill("gold");
      imageMode(CENTER);
-     //image(polygon_img ,ball.position.x,ball.position.y,40,40);
+     image(polygon_image ,ball.position.x,ball.position.y,40,40);
 
 
-     ellipse(ball.position.x,ball.position.y,20);
+     
      slingshot.display();
      
 } 

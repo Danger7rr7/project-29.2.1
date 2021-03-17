@@ -10,7 +10,7 @@ class Ground{
     display(){
        strokeWeight(2);
        fill("black");
-       rectMode(CENTRE);
+       rectMode(CENTER);
        rect(this.ground.position.x,this.ground.position.y,900,20);
       
     }
