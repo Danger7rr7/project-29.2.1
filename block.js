@@ -3,7 +3,7 @@ class Block{
             var options = {
 
                 restitution :0.4,
-                friction    :1.0,
+                friction    :0.5,
 
 
             }
@@ -19,7 +19,7 @@ class Block{
             push();
             translate(pos.x,pos.y);
             rotate(angle);
-            rectMode(CENTRE);
+            rectMode(CENTER);
             rect(0,0,this.width,this.height);
             pop();
         }

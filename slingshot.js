@@ -1,10 +1,10 @@
 class SlingShot{
-    constructor(bodyAnpointB){
+    constructor(bodyA,pointB){
         var options = {
             bodyA: bodyA,
             pointB: pointB,
             stiffness: 0.04,
-            length: 20,
+            length: 1,
         }
         this.pointB = pointB;
         this.sling = Constraint.create(options);
@@ -13,7 +13,7 @@ class SlingShot{
     }
 
     fly(){
-        thia.sling.bodyA = null;
+        this.sling.bodyA = null;
 
     }
 

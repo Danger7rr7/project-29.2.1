@@ -12,23 +12,24 @@ var slingshot;
 var polygon_img;
 
 function preload(){
-    //polygon_image = loadImage("polygon.png");
+    polygon_image = loadImage("polygon.png");
     //backgroundimg = loadImage("bg.png");
 }
 
 function setup(){
     engine = Engine.create();
-    world = enginee.world;
+    world = engine.world;
     
 
     createCanvas(900,400);
 
-    ground = new Ground
-    stand1 = new Stand(380,300,270,10);
+    ground = new Ground();
+    stand1 = new Stand(380,275,270,10);
     stand2 = new Stand(700,200,200,10);
 
     //set1
     //first floor
+    
     block1 = new Block(280,275,30,40);
     block2 = new Block(310,275,30,40);
     block3 = new Block(340,275,30,40); 
@@ -44,6 +45,7 @@ function setup(){
     block12 = new Block(400,235,30,40);
     block13 = new Block(430,235,30,40);
     block14 = new Block(460,235,30,40);
+    block0  = new Block(280,235,30,40);
     //third floor
     block15 = new Block(340,195,30,40);
     block16 = new Block(370,195,30,40);
@@ -71,8 +73,8 @@ function setup(){
 
 
     ball = Bodies.circle(50,200,20);
-    ball.addImage("polugon.png");
-    World.add(world.ball);
+    //ball.addImage("polygon.png");
+    World.add(world,ball);
 
     slingshot = new SlingShot(this.ball,{x:200,y:200});
 
@@ -91,7 +93,8 @@ function draw(){
      stand2.display();
      
      stroke(15);
-     fill("black");
+     fill("brown");
+     
      block1.display();
      block2.display();
      block3.display();
@@ -108,6 +111,7 @@ function draw(){
      block12.display();
      block13.display();
      block14.display();
+     block0.display();
      stroke(15);
      fill("blue");
      block15.display();
@@ -137,6 +141,9 @@ function draw(){
      stroke(15);
      fill("cyan");
      block9.display();
+     fill("gold");
+     imageMode(CENTER);
+     //image(polygon_img ,ball.position.x,ball.position.y,40,40);
 
 
      ellipse(ball.position.x,ball.position.y,20);
