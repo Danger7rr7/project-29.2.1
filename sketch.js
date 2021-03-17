@@ -71,6 +71,7 @@ function setup(){
 
 
     ball = Bodies.circle(50,200,20);
+    ball.addImage("polugon.png");
     World.add(world.ball);
 
     slingshot = new SlingShot(this.ball,{x:200,y:200});
